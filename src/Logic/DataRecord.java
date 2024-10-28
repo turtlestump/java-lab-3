@@ -1,3 +1,5 @@
+package Logic;
+
 public record DataRecord(int hoursStudied, int attendance, ParentalInvolvement parentalInvolvement,
                          ResourceAccess resourceAccess, boolean extracurriculars, int sleepHours, int previousScores,
                          MotivationLevel motivationLevel, boolean internetAccess, int tutoringSessions,
