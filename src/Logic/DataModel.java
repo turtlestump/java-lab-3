@@ -5,7 +5,7 @@ import javax.swing.table.TableModel;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class DataModel implements TableModel {
+public class DataModel implements FilterableTableModel {
 
     // Variables / constants
     int rowCount;
@@ -18,6 +18,16 @@ public class DataModel implements TableModel {
     final int[] viewColumns = {0, 1, 2,
                                5, 6, 7, 11,
                                12, 15, 19};     // Corresponds to columns above
+
+    // Filter sets
+    final DataFilter[][] filterSets = {
+
+            DiscreteDataFilter.getFilterSet(DataRecord.ParentalInvolvement.values()),
+            DiscreteDataFilter.getFilterSet(DataRecord.MotivationLevel.values()),
+            DiscreteDataFilter.getFilterSet(DataRecord.TeacherQuality.values()),
+            DiscreteDataFilter.getFilterSet(DataRecord.SchoolType.values()),
+
+    };
 
     ArrayList<TableModelListener> listeners = new ArrayList<>();
     final String fileName = "StudentPerformanceFactors.csv";
@@ -39,6 +49,12 @@ public class DataModel implements TableModel {
         }
 
         rowCount = data.length;
+
+    }
+
+    public DataFilter[][] getFilterSets() {
+
+        return filterSets;
 
     }
     

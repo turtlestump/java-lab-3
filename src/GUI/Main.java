@@ -4,15 +4,17 @@ package GUI;
 // Lab 3: Data Visualization
 
 // Class imports
+import Logic.DataModel;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class Main extends JPanel {
 
     TablePanel tablePanel;
-    ChartPanel chartPanel;
-    StatsPanel statsPanel;
-    DetailsPanel detailsPanel;
+    //ChartPanel chartPanel;
+    //StatsPanel statsPanel;
+    //DetailsPanel detailsPanel;
 
     public Main() {
 

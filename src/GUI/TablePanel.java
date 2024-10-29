@@ -1,6 +1,9 @@
 package GUI;
 
 // Class imports
+import Logic.DataFilter;
+import Logic.FilterableTableModel;
+
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.table.*;
@@ -12,7 +15,7 @@ public class TablePanel extends JPanel {
     JPanel filterPanel;         // For disabling certain categories
     JCheckBox filters;
 
-    public TablePanel(TableModel data) {
+    public TablePanel(FilterableTableModel data) {
 
         // Set background.
         setBackground(Color.BLACK);
@@ -24,6 +27,13 @@ public class TablePanel extends JPanel {
         filterPanel = new JPanel();
         filterPanel.setBackground(Color.GRAY);
         filterPanel.setPreferredSize(new Dimension(1800, 280));
+
+        // Add filter sets to filterPanel
+        for (DataFilter[] filterSet : data.getFilterSets()) {
+
+            //filterPanel.add(new FilterPanel(filterSet));
+
+        }
 
         table = new JTable();
         table.setModel(data);           // Fill table with data to create the model.

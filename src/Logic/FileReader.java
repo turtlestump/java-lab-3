@@ -14,11 +14,14 @@ public class FileReader {
 
         String contents = Files.readString(Path.of(fileName), StandardCharsets.UTF_8);
         List<String> lines = List.of(contents.split("\n"));              // Split csv by line.
-        return lines.stream()
+        ArrayList<Object[]> data = lines.stream()
                 .skip(1)                                                    // Skip header line.
                 .map(line -> line.split(","))                            // Set delimiter to comma.
                 .map(FileReader::parseDataRecord)
-                .collect(ArrayList::new, ArrayList::add, ArrayList::addAll).toArray(new Object[0][]);
+                .map(DataRecord::toObjectArray)
+                .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
+
+        return data.toArray(new Object[data.size()][]);
 
     }
 

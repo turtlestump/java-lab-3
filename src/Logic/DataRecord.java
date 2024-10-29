@@ -8,20 +8,30 @@ public record DataRecord(int hoursStudied, int attendance, ParentalInvolvement p
                          ParentalEducation parentalEducation, DistanceFromHome distanceFromHome, Gender gender,
                          int examScore) {
 
+    // Converter method
+    public Object[] toObjectArray() {
+
+        return new Object[] { hoursStudied, attendance, parentalInvolvement, resourceAccess, extracurriculars,
+                              sleepHours, previousScores, motivationLevel, internetAccess, tutoringSessions,
+                              familyIncome, teacherQuality, schoolType, peerInfluence, physicalActivity,
+                              learningDisabilities, parentalEducation, distanceFromHome, gender, examScore };
+
+    }
+
     // Category enumerators
     public enum ParentalInvolvement {
 
         LOW, MEDIUM, HIGH;
         public static ParentalInvolvement parseParentalInvolvement(String parentalInvolvement) {
 
-            switch (parentalInvolvement.strip()) {
+            return switch (parentalInvolvement.strip()) {
 
-                case "Low:": return LOW;
-                case "Medium:": return MEDIUM;
-                case "High:": return HIGH;
-                default: return null;
+                case "Low" -> LOW;
+                case "Medium" -> MEDIUM;
+                case "High" -> HIGH;
+                default -> null;
 
-            }
+            };
 
         }
 
@@ -32,14 +42,14 @@ public record DataRecord(int hoursStudied, int attendance, ParentalInvolvement p
         LOW, MEDIUM, HIGH;
         public static ResourceAccess parseResourceAccess(String resourceAccess) {
 
-            switch (resourceAccess.strip()) {
+            return switch (resourceAccess.strip()) {
 
-                case "Low:": return LOW;
-                case "Medium:": return MEDIUM;
-                case "High:": return HIGH;
-                default: return null;
+                case "Low" -> LOW;
+                case "Medium" -> MEDIUM;
+                case "High" -> HIGH;
+                default -> null;
 
-            }
+            };
 
         }
 
@@ -50,14 +60,14 @@ public record DataRecord(int hoursStudied, int attendance, ParentalInvolvement p
         LOW, MEDIUM, HIGH;
         public static MotivationLevel parseMotivationLevel(String motivationLevel) {
 
-            switch (motivationLevel.strip()) {
+            return switch (motivationLevel.strip()) {
 
-                case "Low:": return LOW;
-                case "Medium:": return MEDIUM;
-                case "High:": return HIGH;
-                default: return null;
+                case "Low" -> LOW;
+                case "Medium" -> MEDIUM;
+                case "High" -> HIGH;
+                default -> null;
 
-            }
+            };
 
         }
 
@@ -68,13 +78,13 @@ public record DataRecord(int hoursStudied, int attendance, ParentalInvolvement p
         LOW, HIGH;
         public static FamilyIncome parseFamilyIncome(String familyIncome) {
 
-            switch (familyIncome.strip()) {
+            return switch (familyIncome.strip()) {
 
-                case "Low:": return LOW;
-                case "High:": return HIGH;
-                default: return null;
+                case "Low" -> LOW;
+                case "High" -> HIGH;
+                default -> null;
 
-            }
+            };
 
         }
 
@@ -85,13 +95,13 @@ public record DataRecord(int hoursStudied, int attendance, ParentalInvolvement p
         MEDIUM, HIGH;
         public static TeacherQuality parseTeacherQuality(String teacherQuality) {
 
-            switch (teacherQuality.strip()) {
+            return switch (teacherQuality.strip()) {
 
-                case "Medium:": return MEDIUM;
-                case "High:": return HIGH;
-                default: return null;
+                case "Medium" -> MEDIUM;
+                case "High" -> HIGH;
+                default -> null;
 
-            }
+            };
 
         }
 
@@ -102,13 +112,13 @@ public record DataRecord(int hoursStudied, int attendance, ParentalInvolvement p
         PUBLIC, PRIVATE;
         public static SchoolType parseSchoolType(String schoolType) {
 
-            switch (schoolType.strip()) {
+            return switch (schoolType.strip()) {
 
-                case "Public": return PUBLIC;
-                case "Private": return PRIVATE;
-                default: return null;
+                case "Public" -> PUBLIC;
+                case "Private" -> PRIVATE;
+                default -> null;
 
-            }
+            };
 
         }
 
@@ -119,14 +129,14 @@ public record DataRecord(int hoursStudied, int attendance, ParentalInvolvement p
         POSITIVE, NEGATIVE, NEUTRAL;
         public static PeerInfluence parsePeerInfluence(String peerInfluence) {
 
-            switch (peerInfluence.strip()) {
+            return switch (peerInfluence.strip()) {
 
-                case "Positive": return POSITIVE;
-                case "Negative": return NEGATIVE;
-                case "Neutral": return NEUTRAL;
-                default: return null;
+                case "Positive" -> POSITIVE;
+                case "Negative" -> NEGATIVE;
+                case "Neutral" -> NEUTRAL;
+                default -> null;
 
-            }
+            };
 
         }
 
@@ -137,14 +147,14 @@ public record DataRecord(int hoursStudied, int attendance, ParentalInvolvement p
         COLLEGE, HIGH_SCHOOL, POSTGRADUATE;
         public static ParentalEducation parseParentalEducation(String parentalEducation) {
 
-            switch (parentalEducation.strip()) {
+            return switch (parentalEducation.strip()) {
 
-                case "College": return COLLEGE;
-                case "High School": return HIGH_SCHOOL;
-                case "Postgraduate": return POSTGRADUATE;
-                default: return null;
+                case "College" -> COLLEGE;
+                case "High School" -> HIGH_SCHOOL;
+                case "Postgraduate" -> POSTGRADUATE;
+                default -> null;
 
-            }
+            };
 
         }
 
@@ -155,14 +165,14 @@ public record DataRecord(int hoursStudied, int attendance, ParentalInvolvement p
         FAR, MODERATE, NEAR;
         public static DistanceFromHome parseDistanceFromHome(String distanceFromHome) {
 
-            switch (distanceFromHome.strip()) {
+            return switch (distanceFromHome.strip()) {
 
-                case "Far": return FAR;
-                case "Moderate": return MODERATE;
-                case "Near": return NEAR;
-                default: return null;
+                case "Far" -> FAR;
+                case "Moderate" -> MODERATE;
+                case "Near" -> NEAR;
+                default -> null;
 
-            }
+            };
 
         }
 
@@ -173,13 +183,13 @@ public record DataRecord(int hoursStudied, int attendance, ParentalInvolvement p
         MALE, FEMALE;
         public static Gender parseGender(String gender) {
 
-            switch (gender.strip()) {
+            return switch (gender.strip()) {
 
-                case "Male": return MALE;
-                case "Female": return FEMALE;
-                default: return null;
+                case "Male" -> MALE;
+                case "Female" -> FEMALE;
+                default -> null;
 
-            }
+            };
 
         }
 

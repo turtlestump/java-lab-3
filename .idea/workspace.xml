@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8493b9-4c26-4284-81de-acac0ad5b142" name="Changes" comment="Complete file reading algorithm">
-      <change afterPath="$PROJECT_DIR$/src/GUI/TablePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Logic/DataModel.java" afterDir="false" />
+    <list default="true" id="4f8493b9-4c26-4284-81de-acac0ad5b142" name="Changes" comment="Implement table, scroll pane">
+      <change afterPath="$PROJECT_DIR$/src/GUI/FilterPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Logic/DataFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Logic/DiscreteDataFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Logic/FilterableTableModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Logic/RangedDataFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/DataRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/TablePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/TablePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/DataModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/DataModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/DataRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/DataRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FileReader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package.json" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -39,20 +45,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Personal\Java Projects\Lab3" />
@@ -75,7 +82,9 @@
       <option name="presentableId" value="Default" />
       <updated>1730073936284</updated>
       <workItem from="1730073937379" duration="6168000" />
-      <workItem from="1730134044784" duration="2552000" />
+      <workItem from="1730134044784" duration="4682000" />
+      <workItem from="1730144224986" duration="3000" />
+      <workItem from="1730144491690" duration="5588000" />
     </task>
     <task id="LOCAL-00001" summary="Update record parsing template">
       <option name="closed" value="true" />
@@ -93,7 +102,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730090294592</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Implement table, scroll pane">
+      <option name="closed" value="true" />
+      <created>1730136723303</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1730136723304</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,6 +119,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Update record parsing template" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update record parsing template" />
+    <MESSAGE value="Implement table, scroll pane" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement table, scroll pane" />
   </component>
 </project>
